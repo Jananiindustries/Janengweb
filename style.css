@@ -1,37 +1,19 @@
 /* Reset and Base */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #f7e9e9;
-  background-color: #000; /* fallback */
+  background-color: #000;
 }
 
-/* Full-page background for each page */
-.body-home {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-.body-about {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-.body-services {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-.body-supplies {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-.body-projects {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-.body-gallery {
-  background: url('images/home-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
+/* Backgrounds */
+.body-home,
+.body-about,
+.body-services,
+.body-supplies,
+.body-projects,
+.body-gallery,
 .body-contact {
   background: url('images/home-bg.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -40,16 +22,12 @@ body {
 /* Header */
 .header-logo {
   display: flex;
-  flex-direction: row; /* ✅ Row layout by default */
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
   flex-wrap: wrap;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
-  gap: 20px;
 }
-
 
 .header-logo img {
   width: 200px;
@@ -73,10 +51,9 @@ body {
 nav {
   background-color: #a0161a;
   padding: 10px 0;
-  overflow-x: auto;
   white-space: nowrap;
   display: flex;
-  justify-content: center; /* ✅ Center the links */
+  justify-content: center;
   gap: 15px;
   scroll-behavior: smooth;
 }
@@ -85,16 +62,23 @@ nav a {
   color: #eef0f3;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
-  display: inline-block;
   padding: 8px 12px;
   flex: 0 0 auto;
+  transition: color 0.3s;
 }
 
 nav a:hover {
   color: #f1c40f;
 }
 
+/* Sticky Navbar Only on Desktop */
+@media (min-width: 769px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
 
 /* Hero Section */
 .hero-image {
@@ -108,13 +92,13 @@ nav a:hover {
   text-shadow: 2px 2px 5px #e6dee0;
 }
 
-/* Main Container */
+/* Container */
 .container {
   padding: 40px 20px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   max-width: 1000px;
   margin: 40px auto;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
 }
 
@@ -133,10 +117,9 @@ nav a:hover {
 }
 
 @keyframes typing {
-  from { width: 0 }
+  from { width: 0; }
   to { width: 42ch; }
 }
-
 @keyframes blink-caret {
   0%, 100% { border-color: transparent; }
   50% { border-color: orange; }
@@ -149,7 +132,6 @@ nav a:hover {
   gap: 20px;
   padding: 20px 0;
 }
-
 .gallery-grid img,
 .gallery-grid video {
   width: 100%;
@@ -159,7 +141,6 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .gallery-grid img:hover,
 .gallery-grid video:hover {
   transform: scale(1.03);
@@ -175,13 +156,12 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .header-logo {
-    flex-direction: row; /* ✅ Keep row layout even on mobile */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     text-align: center;
     gap: 15px;
   }
@@ -215,7 +195,6 @@ footer {
 
   .typewriter h2 {
     font-size: 22px;
-    width: 100%;
   }
 
   .gallery-grid {
@@ -224,6 +203,7 @@ footer {
   }
 }
 
+/* Contact Page */
 .contact-flex {
   display: flex;
   flex-wrap: wrap;
@@ -231,37 +211,24 @@ footer {
   align-items: flex-start;
   justify-content: center;
 }
-
 .contact-image img {
-  width: 300px;
-  max-width: 100%;
+  width: 280px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: block;
 }
-
 .contact-info {
   flex: 1;
   min-width: 250px;
 }
-/* Contact page layout */
-.contact-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: center;
+.extra-contact-image {
+  margin-top: 30px;
+  text-align: center;
 }
-
-.contact-image img {
+.extra-contact-image img {
   width: 300px;
-  max-width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.contact-info {
-  flex: 1;
-  min-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ✅ WhatsApp Floating Buttons */
@@ -298,26 +265,8 @@ footer {
   vertical-align: middle;
   margin-left: 5px;
 }
-.contact-image img {
-  width: 280px;
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: block;
-}
 
-.extra-contact-image {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.extra-contact-image img {
-  width: 300px;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+/* Esteemed Customers */
 .esteemed-customers {
   margin-top: 40px;
   padding: 20px;
@@ -325,37 +274,22 @@ footer {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
 .esteemed-customers h2 {
-  font-size: 26px;
+  font-size: 30px;
   color: #f1c40f;
   margin-bottom: 15px;
   text-align: center;
 }
-
 .esteemed-customers ul {
   list-style-type: disc;
   padding-left: 40px;
-  font-size: 22px; /* ✅ Increased from 18px */
+  font-size: 22px;
   font-weight: 500;
   line-height: 2;
   color: #ffffff;
 }
-.esteemed-customers h2 {
-  font-size: 30px; /* was 26px */
-  color: #f1c40f;
-  margin-bottom: 15px;
-  text-align: center;
-}
-/* Sticky Navbar */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
 /* Hamburger Menu */
-/* Hamburger Button */
 .hamburger {
   display: none;
   font-size: 26px;
@@ -366,12 +300,10 @@ nav {
   text-align: right;
 }
 
-/* Mobile Nav */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -379,12 +311,10 @@ nav {
     background-color: #a0161a;
     padding: 10px 0;
   }
-
   .nav-links.active {
     display: flex;
   }
 }
-
 
 /* Scroll to Top Button */
 #scrollTopBtn {
@@ -403,34 +333,30 @@ nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: opacity 0.3s ease;
 }
-
 #scrollTopBtn:hover {
   background-color: #000;
   color: #f1c40f;
 }
 
-/* Dark Mode Support */
+/* Dark Mode */
 .dark-mode {
   background-color: #121212 !important;
   color: #f0f0f0;
 }
-
 .dark-mode .container,
 .dark-mode nav,
 .dark-mode footer {
   background-color: #1e1e1e !important;
   color: #f0f0f0;
 }
-
 .dark-mode nav a {
   color: #ddd;
 }
-
 .dark-mode nav a:hover {
   color: #f1c40f;
 }
 
-/* Dark Mode Toggle Button */
+/* Dark Mode Toggle */
 #darkModeToggle {
   position: fixed;
   bottom: 190px;
@@ -445,18 +371,16 @@ nav {
   font-size: 14px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-
 #darkModeToggle:hover {
   background-color: #f1c40f;
   color: #000;
 }
 
-/* Optional: Map Styling */
+/* Map Section */
 .map-container {
   margin-top: 40px;
   text-align: center;
 }
-
 .map-container h2 {
   font-size: 24px;
   margin-bottom: 20px;
