@@ -40,12 +40,16 @@ body {
 /* Header */
 .header-logo {
   display: flex;
+  flex-direction: row; /* ✅ Row layout by default */
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.6);
   color: white;
+  gap: 20px;
 }
+
 
 .header-logo img {
   width: 200px;
@@ -174,13 +178,30 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .header-logo {
-    flex-direction: column;
+    flex-direction: row; /* ✅ Keep row layout even on mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    gap: 15px;
+  }
+
+  .header-logo img {
+    width: 140px;
+    margin: 0;
+  }
+
+  .header-text h1 {
+    font-size: 20px;
+  }
+
+  .header-text p {
+    font-size: 14px;
   }
 
   nav {
-    display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   nav a {
@@ -202,6 +223,7 @@ footer {
     gap: 15px;
   }
 }
+
 .contact-flex {
   display: flex;
   flex-wrap: wrap;
